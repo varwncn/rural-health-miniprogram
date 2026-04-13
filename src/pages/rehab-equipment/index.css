@@ -43,6 +43,289 @@
   display: block;
 }
 
+/* 蓝牙连接区域 */
+.bluetooth-section {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.bluetooth-header {
+  margin-bottom: 20px;
+}
+
+.bluetooth-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bluetooth-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.bluetooth-status {
+  margin-left: auto;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.status-available {
+  background: #e8f5e9;
+}
+
+.status-available .status-text {
+  font-size: 12px;
+  color: #4caf50;
+}
+
+.status-unavailable {
+  background: #fff3e0;
+}
+
+.status-unavailable .status-text {
+  font-size: 12px;
+  color: #f57c00;
+}
+
+/* 已连接设备 */
+.connected-device-card {
+  background: #e8f5e9;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.connected-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.connected-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4caf50;
+  flex: 1;
+}
+
+.disconnect-btn {
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.disconnect-text {
+  font-size: 12px;
+  color: #f44336;
+}
+
+.connected-info {
+  margin-bottom: 16px;
+}
+
+.connected-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.connected-id {
+  font-size: 12px;
+  color: #666;
+  display: block;
+}
+
+/* 服务列表 */
+.services-list {
+  margin-top: 16px;
+}
+
+.services-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.service-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.service-id {
+  font-size: 12px;
+  color: #667eea;
+  margin-bottom: 8px;
+  display: block;
+  word-break: break-all;
+}
+
+.characteristic-item {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.characteristic-item:last-child {
+  margin-bottom: 0;
+}
+
+.characteristic-id {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 8px;
+  display: block;
+  word-break: break-all;
+}
+
+.characteristic-props {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.prop-tag {
+  background: #f3f0ff;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.prop-text {
+  font-size: 10px;
+  color: #667eea;
+}
+
+/* 搜索控制 */
+.search-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.search-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.search-btn.searching {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+}
+
+.rotating {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.search-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 搜索到的设备列表 */
+.found-devices-list {
+  margin-top: 16px;
+}
+
+.found-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.device-item {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.device-info {
+  flex: 1;
+  margin-right: 12px;
+}
+
+.device-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.device-id {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+  display: block;
+  word-break: break-all;
+}
+
+.device-rssi {
+  font-size: 12px;
+  color: #999;
+  display: block;
+}
+
+.connect-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.connect-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 蓝牙未就绪提示 */
+.bluetooth-unavailable-tip {
+  background: #fff3e0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.tip-text {
+  font-size: 14px;
+  color: #f57c00;
+}
+
 /* 设备列表 */
 .equipment-list {
   display: flex;
