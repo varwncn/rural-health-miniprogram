@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useLoad, showLoading, hideLoading, showToast, switchTab, setStorageSync } from '@tarojs/taro';
 import { Network } from '@/network';
 import { Input } from '@/components/ui/input';
+import { User, Calendar, Phone, MapPin, Heart, CircleAlert } from 'lucide-react-taro';
 import './index.css';
 
 const UserInfoPage = () => {
@@ -137,8 +138,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">姓名 *</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <User size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 placeholder="请输入姓名"
                 value={formData.name}
                 onInput={(e) => handleInputChange('name', e.detail.value)}
@@ -149,8 +153,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">年龄 *</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <Calendar size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 type="number"
                 placeholder="请输入年龄"
                 value={formData.age}
@@ -180,8 +187,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">联系电话 *</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <Phone size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 type="number"
                 placeholder="请输入联系电话"
                 value={formData.phone}
@@ -193,8 +203,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">住址 *</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <MapPin size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 placeholder="请输入详细住址"
                 value={formData.address}
                 onInput={(e) => handleInputChange('address', e.detail.value)}
@@ -210,8 +223,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">健康状况 *</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <Heart size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 placeholder="请输入健康状况（如：良好、患有高血压等）"
                 value={formData.health_status}
                 onInput={(e) => handleInputChange('health_status', e.detail.value)}
@@ -222,8 +238,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">过敏史</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <CircleAlert size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 placeholder='如有过敏史请详细说明，无则填"无"'
                 value={formData.allergies}
                 onInput={(e) => handleInputChange('allergies', e.detail.value)}
@@ -234,8 +253,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">慢性病史</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <CircleAlert size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 placeholder='如有慢性病史请详细说明，无则填"无"'
                 value={formData.chronic_diseases}
                 onInput={(e) => handleInputChange('chronic_diseases', e.detail.value)}
@@ -251,8 +273,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">联系人姓名</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <User size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 placeholder="请输入紧急联系人姓名"
                 value={formData.emergency_contact_name}
                 onInput={(e) => handleInputChange('emergency_contact_name', e.detail.value)}
@@ -263,8 +288,11 @@ const UserInfoPage = () => {
           <View className="form-item">
             <Text className="form-label">联系人电话</Text>
             <View className="form-input-wrap">
+              <View className="input-icon">
+                <Phone size={24} color="#667eea" />
+              </View>
               <Input
-                className="form-input"
+                className="form-input with-icon"
                 type="number"
                 placeholder="请输入紧急联系人电话"
                 value={formData.emergency_contact_phone}
