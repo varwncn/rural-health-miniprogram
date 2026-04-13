@@ -75,7 +75,7 @@ const EmergencyPage = () => {
               return (
                 <View key={item.id} className="contact-item" onClick={() => handleCall(item.phone)}>
                   <View className="contact-icon" style={{ background: item.color }}>
-                    <Icon size={36} color="#fff" />
+                    <Icon size={48} color="#fff" />
                   </View>
                   <View className="contact-info">
                     <Text className="contact-name">{item.name}</Text>
@@ -83,7 +83,7 @@ const EmergencyPage = () => {
                     <Text className="contact-desc">{item.desc}</Text>
                   </View>
                   <View className="contact-call">
-                    <PhoneCall size={36} color="#fff" />
+                    <PhoneCall size={48} color="#fff" />
                   </View>
                 </View>
               );
