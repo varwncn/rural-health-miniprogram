@@ -1,14 +1,14 @@
 .home-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 /* 头部Banner */
 .header-banner {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   backdrop-filter: blur(10px);
-  padding: 60px 20px 40px;
+  padding: 60px 20px 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -31,33 +31,82 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 导航容器 */
-.nav-container {
-  padding: 30px 20px;
+/* 健康数据概览 */
+.health-overview {
+  display: flex;
+  gap: 0;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.nav-title {
-  margin-bottom: 20px;
+.overview-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.nav-title-text {
+.overview-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overview-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.overview-value {
   font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.overview-divider {
+  width: 1px;
+  background: linear-gradient(180deg, transparent, #e0e0e0, transparent);
+}
+
+/* 服务板块 */
+.service-section {
+  margin: 20px;
+}
+
+.section-header {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section-title {
+  font-size: 18px;
   font-weight: bold;
   color: #fff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 导航网格 */
-.nav-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+.section-subtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.nav-item {
+/* 服务网格 */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.service-card {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
-  padding: 24px 16px;
+  padding: 20px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,16 +115,15 @@
   transition: all 0.3s ease;
 }
 
-.nav-item:active {
+.service-card:active {
   transform: scale(0.98);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* 导航图标 */
-.nav-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+.service-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,10 +142,6 @@
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
-.emergency {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-
 .rehab-training {
   background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
 }
@@ -110,39 +154,143 @@
   background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
 }
 
-/* 导航文字 */
-.nav-text {
-  font-size: 16px;
+.service-name {
+  font-size: 14px;
   font-weight: bold;
   color: #333;
-}
-
-.nav-desc {
-  font-size: 12px;
-  color: #666;
   text-align: center;
 }
 
-/* 提示容器 */
-.tips-container {
-  margin: 0 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.service-desc {
+  font-size: 11px;
+  color: #666;
+  text-align: center;
+  line-height: 1.4;
 }
 
-.tips-title {
-  display: block;
+/* 应急卡片 */
+.emergency-card {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.emergency-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.emergency-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.emergency-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.emergency-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.emergency-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+}
+
+.emergency-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 8px;
+}
+
+.arrow-text {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 个人信息入口 */
+.user-info-entry {
+  margin: 20px;
+}
+
+.user-info-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.user-info-content:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.user-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-info-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-info-title {
   font-size: 16px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 8px;
+}
+
+.user-info-desc {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 底部提示 */
+.footer-tips {
+  margin: 20px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tips-text {
   display: block;
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
   line-height: 1.6;
 }
