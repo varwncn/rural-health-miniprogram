@@ -1,11 +1,13 @@
 import { View, Text, ScrollView } from '@tarojs/components';
-import { useLoad, makePhoneCall } from '@tarojs/taro';
+import { useLoad, setNavigationBarTitle, makePhoneCall } from '@tarojs/taro';
 import { PhoneCall, Bell, Heart, Shield } from 'lucide-react-taro';
 import './index.css';
 
 const EmergencyPage = () => {
   useLoad(() => {
-    // 设置页面标题
+    setNavigationBarTitle({
+      title: '紧急求助'
+    });
   });
 
   const handleCall = (phone: string) => {
@@ -73,7 +75,7 @@ const EmergencyPage = () => {
               return (
                 <View key={item.id} className="contact-item" onClick={() => handleCall(item.phone)}>
                   <View className="contact-icon" style={{ background: item.color }}>
-                    <Icon size={20} color="#fff" />
+                    <Icon size={36} color="#fff" />
                   </View>
                   <View className="contact-info">
                     <Text className="contact-name">{item.name}</Text>
@@ -81,7 +83,7 @@ const EmergencyPage = () => {
                     <Text className="contact-desc">{item.desc}</Text>
                   </View>
                   <View className="contact-call">
-                    <PhoneCall size={20} color="#fff" />
+                    <PhoneCall size={36} color="#fff" />
                   </View>
                 </View>
               );
