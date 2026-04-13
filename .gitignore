@@ -47,3 +47,6 @@ key/
 # Coze logs
 .coze/
 .cozeproj/
+
+# Assets (images, videos, etc.) - use object storage instead
+assets/
