@@ -32,7 +32,7 @@ const IndexPage = () => {
       }
     } catch (error) {
       console.error('获取运动数据失败:', error);
-      // 失败时使用模拟数据
+      // 失败时使用模拟数据（不使用任何API）
       const mockSteps = Math.floor(Math.random() * 8000) + 2000;
       setSteps(mockSteps);
       setHealthScore(70);
@@ -40,7 +40,12 @@ const IndexPage = () => {
   };
 
   useEffect(() => {
-    fetchWeRunData();
+    // 延迟1秒再获取数据，避免初始化时的错误
+    const timer = setTimeout(() => {
+      fetchWeRunData();
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   useLoad(() => {
