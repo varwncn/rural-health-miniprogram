@@ -9,10 +9,22 @@ const IndexPage = () => {
   const [healthScore, setHealthScore] = useState<number>(0);
 
   // 获取微信运动步数
-  const fetchWeRunData = async () => {
+  const fetchWeRunData = async (retryCount = 0) => {
     try {
-      const res = await getWeRunData();
-      if (res.encryptedData && res.iv) {
+      console.log(`开始获取微信运动数据 (尝试 ${retryCount + 1}次)...`);
+
+      // 设置超时时间为 10 秒
+      const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('请求超时')), 10000);
+      });
+
+      const res = await Promise.race([
+        getWeRunData(),
+        timeoutPromise
+      ]) as any;
+
+      if (res && res.encryptedData && res.iv) {
+        console.log('✓ 微信运动数据获取成功');
         // 加密数据需要在后端解密（这里暂时使用模拟数据）
         // 实际项目中需要将 encryptedData 和 iv 发送到后端进行解密
         console.log('微信运动数据（加密）:', res.encryptedData);
@@ -29,21 +41,39 @@ const IndexPage = () => {
         else if (mockSteps >= 4000) score = 65;
 
         setHealthScore(score);
+      } else {
+        console.warn('微信运动数据为空，使用模拟数据');
+        useMockData();
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('获取运动数据失败:', error);
-      // 失败时使用模拟数据（不使用任何API）
-      const mockSteps = Math.floor(Math.random() * 8000) + 2000;
-      setSteps(mockSteps);
-      setHealthScore(70);
+
+      // 如果是超时或网络错误，重试一次
+      if (retryCount < 1 && (error.message === '请求超时' || error.message?.includes('timeout'))) {
+        console.log('首次失败，尝试重试...');
+        setTimeout(() => fetchWeRunData(retryCount + 1), 2000);
+        return;
+      }
+
+      // 最终失败时使用模拟数据（不使用任何API）
+      console.log('✓ 使用模拟数据（降级方案）');
+      useMockData();
     }
   };
 
+  // 使用模拟数据
+  const useMockData = () => {
+    const mockSteps = Math.floor(Math.random() * 8000) + 2000;
+    setSteps(mockSteps);
+    setHealthScore(70);
+  };
+
   useEffect(() => {
-    // 延迟1秒再获取数据，避免初始化时的错误
+    // 延迟2秒再获取数据，确保小程序完全初始化
     const timer = setTimeout(() => {
+      console.log('开始初始化健康数据...');
       fetchWeRunData();
-    }, 1000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
