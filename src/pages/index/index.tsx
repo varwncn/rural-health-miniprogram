@@ -1,30 +1,80 @@
-import { View, Text, Image } from '@tarojs/components';
-import { useLoad } from '@tarojs/taro';
-import { Network } from '@/network';
+import { View, Text } from '@tarojs/components';
+import { useLoad, setNavigationBarTitle, navigateTo } from '@tarojs/taro';
+import { Activity, Stethoscope, FileText, PhoneCall } from 'lucide-react-taro';
 import './index.css';
 
-/**
- * 默认首页，直接覆盖本页内容
- */
 const IndexPage = () => {
-  useLoad(async () => {
-    const res = await Network.request({ url: '/api/hello' });
-    console.log(res.data);
+  useLoad(() => {
+    setNavigationBarTitle({
+      title: '乡村永健'
+    });
   });
 
+  const handleNavigate = (path: string) => {
+    navigateTo({
+      url: path
+    });
+  };
+
   return (
-    <View className="w-full h-full flex flex-col justify-center items-center gap-1">
-      <Image
-        className="w-32 h-28"
-        src="https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze-coding/icon/coze-coding.gif"
-      />
-      <View className="self-stretch flex flex-col justify-start items-start gap-2">
-        <Text className="self-stretch text-center justify-start text-base-accent-foreground text-base font-bold">
-          应用开发中
-        </Text>
-        <Text className="self-stretch text-center justify-start text-base-muted-foreground text-sm font-normal">
-          请稍候，界面即将呈现
-        </Text>
+    <View className="home-page">
+      {/* 头部Banner */}
+      <View className="header-banner">
+        <View className="header-content">
+          <Text className="header-title">乡村永健</Text>
+          <Text className="header-subtitle">为乡村居民提供便捷健康服务</Text>
+        </View>
+      </View>
+
+      {/* 功能导航 */}
+      <View className="nav-container">
+        <View className="nav-title">
+          <Text className="nav-title-text">健康服务</Text>
+        </View>
+
+        <View className="nav-grid">
+          {/* 健康资讯 */}
+          <View className="nav-item" onClick={() => handleNavigate('/pages/health-info/index')}>
+            <View className="nav-icon health-info">
+              <Activity size={32} color="#fff" />
+            </View>
+            <Text className="nav-text">健康资讯</Text>
+            <Text className="nav-desc">健康知识 · 预防保健</Text>
+          </View>
+
+          {/* 医疗服务 */}
+          <View className="nav-item" onClick={() => handleNavigate('/pages/medical-service/index')}>
+            <View className="nav-icon medical-service">
+              <Stethoscope size={32} color="#fff" />
+            </View>
+            <Text className="nav-text">医疗服务</Text>
+            <Text className="nav-desc">村医联系 · 预约挂号</Text>
+          </View>
+
+          {/* 健康档案 */}
+          <View className="nav-item" onClick={() => handleNavigate('/pages/health-record/index')}>
+            <View className="nav-icon health-record">
+              <FileText size={32} color="#fff" />
+            </View>
+            <Text className="nav-text">健康档案</Text>
+            <Text className="nav-desc">个人数据 · 就诊记录</Text>
+          </View>
+
+          {/* 紧急求助 */}
+          <View className="nav-item" onClick={() => handleNavigate('/pages/emergency/index')}>
+            <View className="nav-icon emergency">
+              <PhoneCall size={32} color="#fff" />
+            </View>
+            <Text className="nav-text">紧急求助</Text>
+            <Text className="nav-desc">一键呼叫 · 急救指南</Text>
+          </View>
+        </View>
+      </View>
+
+      {/* 健康提示 */}
+      <View className="tips-container">
+        <Text className="tips-title">温馨提示</Text>
+        <Text className="tips-text">定期体检，保持健康生活方式，如有不适及时就医。</Text>
       </View>
     </View>
   );
