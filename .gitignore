@@ -38,4 +38,12 @@ pnpm-debug.log*
 .DS_Store
 
 # Key
-# key/
+key/
+
+# Package files
+*.tgz
+*.tar.gz
+
+# Coze logs
+.coze/
+.cozeproj/
