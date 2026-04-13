@@ -65,7 +65,7 @@ const MedicalServicePage = () => {
               <View key={item.id} className="service-item">
                 <View className="service-header">
                   <View className="service-icon" style={{ background: item.color }}>
-                    <Icon size={24} color="#fff" />
+                    <Icon size={48} color="#fff" />
                   </View>
                   <View className="service-info">
                     <Text className="service-name">{item.name}</Text>
@@ -75,19 +75,19 @@ const MedicalServicePage = () => {
 
                 <View className="service-details">
                   <View className="detail-item">
-                    <Phone size={16} color="#666" />
+                    <Phone size={24} color="#666" />
                     <Text className="detail-text" onClick={() => handleCall(item.phone)}>
                       {item.phone}
                     </Text>
                   </View>
 
                   <View className="detail-item">
-                    <MapPin size={16} color="#666" />
+                    <MapPin size={24} color="#666" />
                     <Text className="detail-text">{item.address}</Text>
                   </View>
 
                   <View className="detail-item">
-                    <Clock size={16} color="#666" />
+                    <Clock size={24} color="#666" />
                     <Text className="detail-text">{item.hours}</Text>
                   </View>
                 </View>

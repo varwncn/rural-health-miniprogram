@@ -5,77 +5,81 @@
 
 .header {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  padding: 40px 20px 30px;
+  padding: 100px 50px 80px;
 }
 
 .header-title {
   display: block;
-  font-size: 24px;
+  font-size: 52px;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .header-subtitle {
   display: block;
-  font-size: 14px;
+  font-size: 24px;
   color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
 }
 
 .content {
-  height: calc(100vh - 120px);
-  padding: 20px;
+  height: calc(100vh - 200px);
+  padding: 50px;
 }
 
 .data-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 32px;
+  margin-bottom: 32px;
 }
 
 .data-card {
   background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .data-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 100px;
+  height: 100px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .data-content {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
 .data-type {
-  font-size: 14px;
+  font-size: 20px;
   color: #666;
 }
 
 .data-value-row {
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 8px;
 }
 
 .data-value {
-  font-size: 28px;
+  font-size: 44px;
   font-weight: bold;
   color: #333;
+  line-height: 1;
 }
 
 .data-unit {
-  font-size: 14px;
+  font-size: 18px;
   color: #999;
 }
 
@@ -86,9 +90,9 @@
 }
 
 .data-status {
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -103,22 +107,23 @@
 }
 
 .data-date {
-  font-size: 12px;
+  font-size: 16px;
   color: #999;
 }
 
 .record-tips {
   background: #fff;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 24px;
+  padding: 32px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  gap: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .record-tips-text {
-  font-size: 14px;
+  font-size: 20px;
   color: #666;
   flex: 1;
+  line-height: 1.6;
 }

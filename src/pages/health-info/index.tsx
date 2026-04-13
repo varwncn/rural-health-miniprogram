@@ -57,7 +57,7 @@ const HealthInfoPage = () => {
             return (
               <View key={item.id} className="info-item">
                 <View className="info-icon" style={{ background: item.color }}>
-                  <Icon size={24} color="#fff" />
+                  <Icon size={48} color="#fff" />
                 </View>
                 <View className="info-content">
                   <Text className="info-title">{item.title}</Text>

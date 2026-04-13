@@ -65,7 +65,7 @@ const HealthRecordPage = () => {
             return (
               <View key={item.id} className="data-card">
                 <View className="data-icon" style={{ background: item.color }}>
-                  <Icon size={24} color="#fff" />
+                  <Icon size={48} color="#fff" />
                 </View>
                 <View className="data-content">
                   <Text className="data-type">{item.type}</Text>
@@ -86,7 +86,7 @@ const HealthRecordPage = () => {
         </View>
 
         <View className="record-tips">
-          <Calendar size={20} color="#666" />
+          <Calendar size={32} color="#666" />
           <Text className="record-tips-text">建议每周定期测量并记录健康数据</Text>
         </View>
       </ScrollView>
