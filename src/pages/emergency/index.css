@@ -19,7 +19,7 @@
 
 .header-subtitle {
   display: block;
-  font-size: 24px;
+  font-size: 34px;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.5;
 }
@@ -39,7 +39,7 @@
 
 .section-title {
   display: block;
-  font-size: 32px;
+  font-size: 42px;
   font-weight: bold;
   color: #333;
   margin-bottom: 32px;
@@ -86,21 +86,21 @@
 }
 
 .contact-name {
-  font-size: 26px;
+  font-size: 48px;
   font-weight: bold;
   color: #333;
   line-height: 1.2;
 }
 
 .contact-phone {
-  font-size: 36px;
+  font-size: 48px;
   font-weight: bold;
   color: #f44336;
   line-height: 1.2;
 }
 
 .contact-desc {
-  font-size: 18px;
+  font-size: 48px;
   color: #999;
   line-height: 1.6;
 }
@@ -138,13 +138,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
   flex-shrink: 0;
 }
 
 .tip-text {
-  font-size: 22px;
+  font-size: 30px;
   color: #666;
   line-height: 1.8;
   flex: 1;
