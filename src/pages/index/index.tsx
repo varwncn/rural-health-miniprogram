@@ -77,7 +77,7 @@ const IndexPage = () => {
       <View className="health-overview">
         <View className="overview-item">
           <View className="overview-icon">
-            <Footprints size={36} color="#667eea" />
+            <Footprints size={48} color="#667eea" />
           </View>
           <Text className="overview-label">今日步数</Text>
           <Text className="overview-value">{steps.toLocaleString()}</Text>
@@ -86,7 +86,7 @@ const IndexPage = () => {
         <View className="overview-divider"></View>
         <View className="overview-item">
           <View className="overview-icon">
-            <Heart size={36} color="#764ba2" />
+            <Heart size={48} color="#764ba2" />
           </View>
           <Text className="overview-label">健康评分</Text>
           <Text className="overview-value">{healthScore}</Text>
@@ -105,7 +105,7 @@ const IndexPage = () => {
           {/* 健康资讯 */}
           <View className="service-card" onClick={() => handleNavigate('/pages/health-info/index')}>
             <View className="service-icon-wrapper health-info">
-              <Activity size={28} color="#fff" />
+              <Activity size={40} color="#fff" />
             </View>
             <Text className="service-name">健康资讯</Text>
             <Text className="service-desc">获取健康知识和养生建议</Text>
@@ -114,7 +114,7 @@ const IndexPage = () => {
           {/* 医疗服务 */}
           <View className="service-card" onClick={() => handleNavigate('/pages/medical-service/index')}>
             <View className="service-icon-wrapper medical-service">
-              <Stethoscope size={28} color="#fff" />
+              <Stethoscope size={40} color="#fff" />
             </View>
             <Text className="service-name">医疗服务</Text>
             <Text className="service-desc">村医联系和预约挂号</Text>
@@ -123,7 +123,7 @@ const IndexPage = () => {
           {/* 健康档案 */}
           <View className="service-card" onClick={() => handleNavigate('/pages/health-record/index')}>
             <View className="service-icon-wrapper health-record">
-              <FileText size={28} color="#fff" />
+              <FileText size={40} color="#fff" />
             </View>
             <Text className="service-name">健康档案</Text>
             <Text className="service-desc">查看个人健康数据和记录</Text>
@@ -142,7 +142,7 @@ const IndexPage = () => {
           {/* 康复训练 */}
           <View className="service-card" onClick={() => handleNavigate('/pages/rehab-training/index')}>
             <View className="service-icon-wrapper rehab-training">
-              <Dumbbell size={28} color="#fff" />
+              <Dumbbell size={40} color="#fff" />
             </View>
             <Text className="service-name">康复训练</Text>
             <Text className="service-desc">个性化训练计划和视频指导</Text>
@@ -151,7 +151,7 @@ const IndexPage = () => {
           {/* 康复设备 */}
           <View className="service-card" onClick={() => handleNavigate('/pages/rehab-equipment/index')}>
             <View className="service-icon-wrapper rehab-equipment">
-              <Activity size={28} color="#fff" />
+              <Activity size={40} color="#fff" />
             </View>
             <Text className="service-name">康复设备</Text>
             <Text className="service-desc">设备借用和蓝牙连接管理</Text>
@@ -160,7 +160,7 @@ const IndexPage = () => {
           {/* 康复远程指导 */}
           <View className="service-card" onClick={() => handleNavigate('/pages/rehab-guide/index')}>
             <View className="service-icon-wrapper rehab-guide">
-              <Video size={28} color="#fff" />
+              <Video size={40} color="#fff" />
             </View>
             <Text className="service-name">远程指导</Text>
             <Text className="service-desc">在线咨询和康复师视频指导</Text>
@@ -177,7 +177,7 @@ const IndexPage = () => {
 
         <View className="emergency-card" onClick={() => handleNavigate('/pages/emergency/index')}>
           <View className="emergency-icon-wrapper">
-            <PhoneCall size={32} color="#fff" />
+            <PhoneCall size={48} color="#fff" />
           </View>
           <View className="emergency-content">
             <Text className="emergency-title">紧急求助</Text>
@@ -193,7 +193,7 @@ const IndexPage = () => {
       <View className="user-info-entry">
         <View className="user-info-content" onClick={() => handleNavigate('/pages/user-info/index')}>
           <View className="user-icon-wrapper">
-            <User size={24} color="#667eea" />
+            <User size={40} color="#667eea" />
           </View>
           <View className="user-info-text">
             <Text className="user-info-title">个人信息</Text>

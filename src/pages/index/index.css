@@ -1,25 +1,25 @@
 .home-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 /* 头部Banner */
 .header-banner {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   backdrop-filter: blur(10px);
-  padding: 80px 30px 50px;
+  padding: 100px 40px 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .header-title {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: bold;
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@
 }
 
 .header-subtitle {
-  font-size: 18px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   line-height: 1.5;
@@ -37,11 +37,11 @@
 .health-overview {
   display: flex;
   gap: 0;
-  margin: 30px;
+  margin: 40px;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .overview-item {
@@ -49,34 +49,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .overview-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
+  width: 88px;
+  height: 88px;
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
   border-radius: 50%;
 }
 
 .overview-label {
-  font-size: 16px;
+  font-size: 18px;
   color: #666;
   font-weight: 500;
 }
 
 .overview-value {
-  font-size: 36px;
+  font-size: 44px;
   font-weight: bold;
   color: #333;
   line-height: 1;
 }
 
 .overview-unit {
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
 }
 
@@ -87,18 +87,18 @@
 
 /* 服务板块 */
 .service-section {
-  margin: 30px;
+  margin: 40px;
 }
 
 .section-header {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .section-title {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   color: #fff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -106,7 +106,7 @@
 }
 
 .section-subtitle {
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.5;
 }
@@ -115,34 +115,34 @@
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .service-card {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 24px;
-  padding: 32px 16px;
+  border-radius: 28px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  gap: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
 .service-card:active {
   transform: scale(0.96);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .service-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
+  width: 88px;
+  height: 88px;
+  border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .health-info {
@@ -170,7 +170,7 @@
 }
 
 .service-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
   text-align: center;
@@ -178,32 +178,32 @@
 }
 
 .service-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: #666;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* 应急卡片 */
 .emergency-card {
   background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  border-radius: 24px;
-  padding: 32px;
+  border-radius: 28px;
+  padding: 40px;
   display: flex;
   align-items: center;
-  gap: 24px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  gap: 32px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
 }
 
 .emergency-card:active {
   transform: scale(0.98);
-  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .emergency-icon-wrapper {
-  width: 80px;
-  height: 80px;
+  width: 96px;
+  height: 96px;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   display: flex;
@@ -216,18 +216,18 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .emergency-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: #fff;
   line-height: 1.2;
 }
 
 .emergency-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.95);
   line-height: 1.6;
 }
@@ -236,38 +236,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 12px;
+  padding-left: 16px;
 }
 
 .arrow-text {
-  font-size: 32px;
+  font-size: 36px;
   color: rgba(255, 255, 255, 0.8);
 }
 
 /* 个人信息入口 */
 .user-info-entry {
-  margin: 30px;
+  margin: 40px;
 }
 
 .user-info-content {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 24px;
-  padding: 24px 30px;
+  border-radius: 28px;
+  padding: 32px 40px;
   display: flex;
   align-items: center;
-  gap: 24px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  gap: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
 .user-info-content:active {
   transform: scale(0.98);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .user-icon-wrapper {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
   border-radius: 50%;
   display: flex;
@@ -280,35 +280,35 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .user-info-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
   line-height: 1.2;
 }
 
 .user-info-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   line-height: 1.5;
 }
 
 /* 底部提示 */
 .footer-tips {
-  margin: 30px;
-  padding: 24px 30px;
+  margin: 40px;
+  padding: 32px 40px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  border-radius: 24px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tips-text {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
   line-height: 1.8;
