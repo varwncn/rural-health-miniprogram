@@ -1,6 +1,6 @@
 import { View, Text } from '@tarojs/components';
-import { useLoad, setNavigationBarTitle, navigateTo } from '@tarojs/taro';
-import { Activity, Stethoscope, FileText, PhoneCall } from 'lucide-react-taro';
+import { useLoad, setNavigationBarTitle, navigateTo, redirectTo, getStorageSync } from '@tarojs/taro';
+import { Activity, Stethoscope, FileText, PhoneCall, Dumbbell, Video } from 'lucide-react-taro';
 import './index.css';
 
 const IndexPage = () => {
@@ -8,6 +8,14 @@ const IndexPage = () => {
     setNavigationBarTitle({
       title: '乡村永健'
     });
+
+    // 检查是否首次进入，如果未填写基础信息则跳转到信息填写页面
+    const hasCompletedUserInfo = getStorageSync('hasCompletedUserInfo');
+    if (!hasCompletedUserInfo) {
+      redirectTo({
+        url: '/pages/user-info/index'
+      });
+    }
   });
 
   const handleNavigate = (path: string) => {
@@ -67,6 +75,42 @@ const IndexPage = () => {
             </View>
             <Text className="nav-text">紧急求助</Text>
             <Text className="nav-desc">一键呼叫 · 急救指南</Text>
+          </View>
+        </View>
+      </View>
+
+      {/* 康复服务 */}
+      <View className="nav-container">
+        <View className="nav-title">
+          <Text className="nav-title-text">康复服务</Text>
+        </View>
+
+        <View className="nav-grid">
+          {/* 康复训练 */}
+          <View className="nav-item" onClick={() => handleNavigate('/pages/rehab-training/index')}>
+            <View className="nav-icon rehab-training">
+              <Dumbbell size={32} color="#fff" />
+            </View>
+            <Text className="nav-text">康复训练</Text>
+            <Text className="nav-desc">训练计划 · 视频指导</Text>
+          </View>
+
+          {/* 康复设备 */}
+          <View className="nav-item" onClick={() => handleNavigate('/pages/rehab-equipment/index')}>
+            <View className="nav-icon rehab-equipment">
+              <Activity size={32} color="#fff" />
+            </View>
+            <Text className="nav-text">康复设备</Text>
+            <Text className="nav-desc">设备借用 · 使用教程</Text>
+          </View>
+
+          {/* 康复远程指导 */}
+          <View className="nav-item" onClick={() => handleNavigate('/pages/rehab-guide/index')}>
+            <View className="nav-icon rehab-guide">
+              <Video size={32} color="#fff" />
+            </View>
+            <Text className="nav-text">远程指导</Text>
+            <Text className="nav-desc">在线咨询 · 视频通话</Text>
           </View>
         </View>
       </View>

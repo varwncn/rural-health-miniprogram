@@ -98,6 +98,18 @@
   background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 }
 
+.rehab-training {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.rehab-equipment {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.rehab-guide {
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+}
+
 /* 导航文字 */
 .nav-text {
   font-size: 16px;

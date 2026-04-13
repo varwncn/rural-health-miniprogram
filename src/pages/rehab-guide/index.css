@@ -1,0 +1,259 @@
+.rehab-guide-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.header {
+  padding: 60px 32px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.header-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.header-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+}
+
+.content {
+  background: #f5f5f5;
+  min-height: calc(100vh - 200px);
+  border-radius: 32px 32px 0 0;
+  margin-top: -20px;
+  padding: 32px 24px;
+}
+
+/* 分区 */
+.section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* 医生列表 */
+.doctor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.doctor-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.doctor-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.doctor-avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.avatar-emoji {
+  font-size: 28px;
+}
+
+.online-badge {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background: #4caf50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.doctor-info {
+  flex: 1;
+}
+
+.doctor-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.doctor-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.online-tag {
+  background: #e8f5e9;
+  color: #4caf50;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.doctor-specialty {
+  font-size: 14px;
+  color: #667eea;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.doctor-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rating-text {
+  font-size: 14px;
+  color: #f97316;
+  font-weight: bold;
+}
+
+.consultation-count {
+  font-size: 12px;
+  color: #999;
+}
+
+.doctor-schedule {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+}
+
+.schedule-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.doctor-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  border-radius: 10px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.action-btn.consult-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.action-btn.video-btn {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.action-btn.phone-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.action-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 历史记录 */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.history-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.history-type {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.type-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.history-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-text {
+  font-size: 12px;
+  color: #999;
+}
+
+.history-doctor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.doctor-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.duration {
+  font-size: 12px;
+  color: #999;
+}
+
+.history-content {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
