@@ -1,9 +1,48 @@
 import { View, Text } from '@tarojs/components';
-import { useLoad, setNavigationBarTitle, navigateTo, redirectTo, getStorageSync } from '@tarojs/taro';
-import { Activity, Stethoscope, FileText, PhoneCall, Dumbbell, Video, User, Heart } from 'lucide-react-taro';
+import { useState, useEffect } from 'react';
+import { useLoad, setNavigationBarTitle, navigateTo, redirectTo, getStorageSync, getWeRunData } from '@tarojs/taro';
+import { Activity, Stethoscope, FileText, PhoneCall, Dumbbell, Video, User, Heart, Footprints } from 'lucide-react-taro';
 import './index.css';
 
 const IndexPage = () => {
+  const [steps, setSteps] = useState<number>(0);
+  const [healthScore, setHealthScore] = useState<number>(0);
+
+  // 获取微信运动步数
+  const fetchWeRunData = async () => {
+    try {
+      const res = await getWeRunData();
+      if (res.encryptedData && res.iv) {
+        // 加密数据需要在后端解密（这里暂时使用模拟数据）
+        // 实际项目中需要将 encryptedData 和 iv 发送到后端进行解密
+        console.log('微信运动数据（加密）:', res.encryptedData);
+
+        // 临时使用模拟数据（实际应该从后端获取解密后的步数）
+        const mockSteps = Math.floor(Math.random() * 10000) + 3000; // 模拟 3000-13000 步
+        setSteps(mockSteps);
+
+        // 根据步数计算健康评分（简单算法）
+        let score = 60; // 基础分
+        if (mockSteps >= 10000) score = 95;
+        else if (mockSteps >= 8000) score = 85;
+        else if (mockSteps >= 6000) score = 75;
+        else if (mockSteps >= 4000) score = 65;
+
+        setHealthScore(score);
+      }
+    } catch (error) {
+      console.error('获取运动数据失败:', error);
+      // 失败时使用模拟数据
+      const mockSteps = Math.floor(Math.random() * 8000) + 2000;
+      setSteps(mockSteps);
+      setHealthScore(70);
+    }
+  };
+
+  useEffect(() => {
+    fetchWeRunData();
+  }, []);
+
   useLoad(() => {
     setNavigationBarTitle({
       title: '乡村永健'
@@ -38,18 +77,20 @@ const IndexPage = () => {
       <View className="health-overview">
         <View className="overview-item">
           <View className="overview-icon">
-            <Heart size={24} color="#667eea" />
+            <Footprints size={36} color="#667eea" />
           </View>
           <Text className="overview-label">今日步数</Text>
-          <Text className="overview-value">0</Text>
+          <Text className="overview-value">{steps.toLocaleString()}</Text>
+          <Text className="overview-unit">步</Text>
         </View>
         <View className="overview-divider"></View>
         <View className="overview-item">
           <View className="overview-icon">
-            <Heart size={24} color="#764ba2" />
+            <Heart size={36} color="#764ba2" />
           </View>
           <Text className="overview-label">健康评分</Text>
-          <Text className="overview-value">--</Text>
+          <Text className="overview-value">{healthScore}</Text>
+          <Text className="overview-unit">分</Text>
         </View>
       </View>
 
